@@ -1,0 +1,31 @@
+/**
+* Global styles for the application
+* @file main.scss
+* @description Core styling rules including reset and base styles
+*/
+
+// Reset styles for consistent cross-browser rendering
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Base HTML settings
+html {
+  font-size: 16px; // Base font size for rem units
+  -webkit-text-size-adjust: 100%; // Prevent iOS font scaling
+}
+
+// Body base styles
+body {
+  background: #000000;
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: Inter, system-ui, -apple-system, sans-serif; // Modern system font stack
+  text-rendering: optimizeLegibility; // Improved text rendering
+  -webkit-font-smoothing: antialiased; // Better font smoothing for webkit
+  -moz-osx-font-smoothing: grayscale; // Better font smoothing for Firefox
+}

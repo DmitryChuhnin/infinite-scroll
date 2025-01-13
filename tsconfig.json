@@ -1,0 +1,114 @@
+/**
+ * TypeScript configuration for Vue 3 application
+ * Main configuration file for the application's TypeScript settings
+ * @see {@link https://www.typescriptlang.org/tsconfig}
+ */
+{
+  "compilerOptions": {
+    /**
+     * Target ECMAScript version
+     * Latest ECMAScript features for modern browsers
+     */
+    "target": "ESNext",
+    /**
+     * Enable experimental decorator support for classes
+     * Required for proper class field definitions
+     */
+    "useDefineForClassFields": true,
+    /**
+     * Specify module code generation
+     * Use ES Modules for better tree-shaking
+     */
+    "module": "ESNext",
+    /**
+     * Specify library files to be included in the compilation
+     * Includes modern ECMAScript and DOM APIs
+     */
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    /**
+     * Skip type checking of declaration files
+     * Improves build performance
+     */
+    "skipLibCheck": true,
+    /* Bundler mode settings */
+    "moduleResolution": "Node",
+    /**
+     * Allow imports to include TypeScript file extensions
+     * Useful for development with Vite
+     */
+    "allowImportingTsExtensions": true,
+    /**
+     * Allow importing JSON files as modules
+     */
+    "resolveJsonModule": true,
+    /**
+     * Ensure each file can be safely transpiled without relying on other imports
+     */
+    "isolatedModules": true,
+    /**
+     * Skip emitting output files
+     * Only type-check the project
+     */
+    "noEmit": true,
+    /**
+     * Support JSX in .tsx files
+     * Preserve JSX for Vite/Vue processing
+     */
+    "jsx": "preserve",
+
+    /* Linting settings */
+    /**
+     * Enable all strict type checking options
+     */
+    "strict": true,
+    /**
+     * Report errors on unused locals
+     */
+    "noUnusedLocals": true,
+    /**
+     * Report errors on unused parameters
+     */
+    "noUnusedParameters": true,
+    /**
+     * Report errors for fallthrough cases in switch statements
+     */
+    "noFallthroughCasesInSwitch": true,
+    /**
+     * Configure path aliases for imports
+     * Enables shorter import paths and better organization
+     */
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@use/*": [
+        "./src/composables/*"
+      ],
+      "@store/*": [
+        "./src/store/*"
+      ]
+    }
+  },
+  /**
+   * Specify files to include in compilation
+   * Includes all TypeScript and Vue files in src directory
+   */
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ],
+  /**
+   * Reference the Node.js specific TypeScript configuration
+   */
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}

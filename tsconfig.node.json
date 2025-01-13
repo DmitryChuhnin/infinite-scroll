@@ -1,0 +1,44 @@
+/**
+ * TypeScript configuration for Vite/Node environment
+ * This config is specifically for Vite configuration files and build scripts
+ * @see {@link https://www.typescriptlang.org/tsconfig}
+ */
+{
+  "compilerOptions": {
+    /**
+     * Enable project references support
+     * Required for TypeScript project references
+     */
+    "composite": true,
+
+    /**
+     * Skip type checking of declaration files
+     * Speeds up compilation by skipping declaration file validation
+     */
+    "skipLibCheck": true,
+
+    /**
+     * Use ES Modules
+     * Ensures compatibility with modern module systems
+     */
+    "module": "ESNext",
+
+    /**
+     * Specify module resolution strategy
+     * Node.js-style module resolution
+     */
+    "moduleResolution": "Node",
+
+    /**
+     * Allow default imports from modules with no default export
+     * Enables cleaner import syntax
+     */
+    "allowSyntheticDefaultImports": true
+  },
+
+  /**
+   * Files to include in compilation
+   * Only includes Vite config file
+   */
+  "include": ["vite.config.ts"]
+}
