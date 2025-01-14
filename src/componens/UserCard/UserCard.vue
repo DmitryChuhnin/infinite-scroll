@@ -22,24 +22,43 @@ import {computed} from 'vue';
 import type {UserCardProps} from './types';
 import {copyToClipboard} from "@/utils/helpers.ts";
 
+/**
+ * Component props definition
+ * @property {User} user - User object containing personal information
+ */
 const props = defineProps<UserCardProps>();
 
+/**
+ * Computed property that combines first and last name
+ * @returns {string} Full name of the user
+ */
 const fullName = computed(() =>
     `${props.user.name.first} ${props.user.name.last}`
 );
 
+/**
+ * Determines text direction based on presence of Arabic characters
+ * Used for proper display of Arabic names
+ * @returns {string} 'rtl' for Arabic text, 'ltr' for other languages
+ */
 const textDirection = computed(() => {
-  // Проверяем наличие арабских символов в имени
+  // Arabic Unicode range: \u0600-\u06FF
   const hasArabic = /[\u0600-\u06FF]/.test(fullName.value);
   return hasArabic ? 'rtl' : 'ltr';
 });
+
+/**
+ * External utility function for copying text to clipboard
+ * @function copyToClipboard
+ * @param {string} text - Text to be copied to clipboard
+ * @returns {Promise<void>}
+ */
 </script>
 <style lang="scss" scoped>
 .user-card {
   background: url("@/assets/images/card-bg.png") no-repeat center center;
   width: 260px;
   border-radius: 36px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   height: 100%;
   display: flex;

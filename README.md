@@ -38,7 +38,7 @@ npm install
 npm run dev
 ```
 
-The application will be available at `http://localhost:5173`
+The application will be available at `http://localhost:4040`
 
 ### Production Build
 
@@ -67,12 +67,15 @@ npm run preview
 
 ```
 src/
-├── assets/           # static assets
-├── components/       # Vue components
-├── stores/          # Pinia stores
-├── types/           # TypeScript types
+├── assets/          # static assets
+├── components/      # Vue components
+├── composables/     # composition functions
+├── router/          # Vue Router configuration
+├── services/        # API services
+├── utils/           # utility functions
+├── views/           # route views
 ├── App.vue          # root component
-└── main.scss          # entry point
+└── main.ts          # entry point
 ```
 
 ## Linting and Formatting
