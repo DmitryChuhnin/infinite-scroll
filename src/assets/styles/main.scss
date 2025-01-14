@@ -16,16 +16,20 @@
 // Base HTML settings
 html {
   font-size: 16px; // Base font size for rem units
-  -webkit-text-size-adjust: 100%; // Prevent iOS font scaling
+  text-size-adjust: 100%; // Prevent iOS font scaling
 }
 
 // Body base styles
 body {
-  background: #000000;
+  background: #000;
   min-height: 100vh;
   line-height: 1.5;
-  font-family: Inter, system-ui, -apple-system, sans-serif; // Modern system font stack
-  text-rendering: optimizeLegibility; // Improved text rendering
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    sans-serif; // Modern system font stack
+  text-rendering: optimizelegibility; // Improved text rendering
   -webkit-font-smoothing: antialiased; // Better font smoothing for webkit
   -moz-osx-font-smoothing: grayscale; // Better font smoothing for Firefox
 }

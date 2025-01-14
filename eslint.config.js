@@ -43,5 +43,13 @@ export default [
             "vue/require-default-prop": "error",    // Require default values for props
             "vue/require-explicit-emits": "error"   // Require explicit emits declaration
         }
-    }
+    },
+    {
+        ignores: [
+            ".*",
+            ".config/*",
+            "node_modules/*",
+            "dist/*",
+        ]
+    },
 ];

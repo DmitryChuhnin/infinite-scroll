@@ -14,5 +14,5 @@
  * @throws {Error} If clipboard access is denied or clipboard API is not available
  */
 export async function copyToClipboard(text: string) {
-    return navigator.clipboard.writeText(text)
+  return navigator.clipboard.writeText(text);
 }

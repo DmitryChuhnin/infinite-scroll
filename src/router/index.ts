@@ -4,7 +4,7 @@
  * @requires vue-router
  */
 
-import { createRouter, createWebHistory, RouteRecordRaw, Router } from 'vue-router'
+import { createRouter, createWebHistory, RouteRecordRaw, Router } from 'vue-router';
 
 /**
  * Application routes configuration
@@ -14,11 +14,11 @@ import { createRouter, createWebHistory, RouteRecordRaw, Router } from 'vue-rout
  * @property {Function} component - Lazy-loaded component for the route
  */
 const routes: RouteRecordRaw[] = [
-    {
-        path: '/',
-        component: () => import('@/views/HomeView.vue')
-    }
-]
+  {
+    path: '/',
+    component: () => import('@/views/HomeView.vue'),
+  },
+];
 
 /**
  * Vue Router instance configuration
@@ -27,9 +27,9 @@ const routes: RouteRecordRaw[] = [
  * @property {History} history - HTML5 History API instance
  * @property {RouteRecordRaw[]} routes - Array of route definitions
  */
-const router:Router = createRouter({
-    history: createWebHistory(),
-    routes
-})
+const router: Router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
 
-export default router
+export default router;

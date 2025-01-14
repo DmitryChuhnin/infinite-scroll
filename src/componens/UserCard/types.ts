@@ -5,5 +5,5 @@ import type { User } from '@/services/api/types';
  * @interface UserCardProps
  */
 export interface UserCardProps {
-    user: User;
+  user: User;
 }

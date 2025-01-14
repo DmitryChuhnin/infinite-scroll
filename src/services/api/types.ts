@@ -18,8 +18,8 @@ export type IncludeFields = 'name' | 'email' | 'picture' | 'id';
  * @readonly
  */
 type UserName = {
-    readonly first: string;
-    readonly last: string;
+  readonly first: string;
+  readonly last: string;
 };
 
 /**
@@ -31,9 +31,9 @@ type UserName = {
  * @readonly
  */
 type UserPicture = {
-    readonly large: string;
-    readonly medium: string;
-    readonly thumbnail: string;
+  readonly large: string;
+  readonly medium: string;
+  readonly thumbnail: string;
 };
 
 /**
@@ -44,8 +44,8 @@ type UserPicture = {
  * @readonly
  */
 type UserId = {
-    readonly name: string | null;
-    readonly value: string | null;
+  readonly name: string | null;
+  readonly value: string | null;
 };
 
 /**
@@ -58,10 +58,10 @@ type UserId = {
  * @readonly
  */
 export interface User {
-    readonly email: string;
-    readonly name: UserName;
-    readonly picture: UserPicture;
-    readonly id: UserId;
+  readonly email: string;
+  readonly name: UserName;
+  readonly picture: UserPicture;
+  readonly id: UserId;
 }
 
 /**
@@ -74,10 +74,10 @@ export interface User {
  * @readonly
  */
 type ApiResponseInfo = {
-    readonly seed: string;
-    readonly results: number;
-    readonly page: number;
-    readonly version?: string;
+  readonly seed: string;
+  readonly results: number;
+  readonly page: number;
+  readonly version?: string;
 };
 
 /**
@@ -88,8 +88,8 @@ type ApiResponseInfo = {
  * @readonly
  */
 export interface UserApiResponse {
-    readonly results: readonly User[];
-    readonly info: ApiResponseInfo;
+  readonly results: readonly User[];
+  readonly info: ApiResponseInfo;
 }
 
 /**
@@ -102,14 +102,14 @@ export interface UserApiResponse {
  * @readonly
  */
 export interface FetchUsersParams {
-    /** Current page number (1-based) */
-    readonly page: number;
-    /** Seed for consistent random results */
-    readonly seed?: string;
-    /** Number of users per page */
-    readonly results?: number;
-    /** Fields to include in the response */
-    readonly includeFields?: readonly IncludeFields[];
+  /** Current page number (1-based) */
+  readonly page: number;
+  /** Seed for consistent random results */
+  readonly seed?: string;
+  /** Number of users per page */
+  readonly results?: number;
+  /** Fields to include in the response */
+  readonly includeFields?: readonly IncludeFields[];
 }
 
 /**
@@ -123,11 +123,11 @@ export interface FetchUsersParams {
  * @readonly
  */
 export type ApiConfig = {
-    readonly BASE_URL: string;
-    readonly USERS_PER_PAGE: number;
-    readonly MAX_CACHE_SIZE: number;
-    readonly REQUEST_TIMEOUT: number;
-    readonly DEFAULT_INCLUDE_FIELDS: readonly IncludeFields[];
+  readonly BASE_URL: string;
+  readonly USERS_PER_PAGE: number;
+  readonly MAX_CACHE_SIZE: number;
+  readonly REQUEST_TIMEOUT: number;
+  readonly DEFAULT_INCLUDE_FIELDS: readonly IncludeFields[];
 };
 
 /**
@@ -140,13 +140,13 @@ export type ApiConfig = {
  * @property {number} timestamp - Unix timestamp of when error occurred
  */
 export class ApiError extends Error {
-    constructor(
-        public readonly status: number,
-        message: string,
-        public readonly endpoint?: string,
-        public readonly timestamp: number = Date.now()
-    ) {
-        super(message);
-        this.name = 'ApiError';
-    }
+  constructor(
+    public readonly status: number,
+    message: string,
+    public readonly endpoint?: string,
+    public readonly timestamp: number = Date.now(),
+  ) {
+    super(message);
+    this.name = 'ApiError';
+  }
 }
